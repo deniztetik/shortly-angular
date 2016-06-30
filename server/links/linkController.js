@@ -22,9 +22,9 @@ module.exports = {
 
   allLinks: function (req, res, next) {
   var findAll = Q.nbind(Link.find, Link);
-
   findAll({})
     .then(function (links) {
+      console.log('j',res.json(links));
       res.json(links);
     })
     .fail(function (error) {
@@ -34,7 +34,7 @@ module.exports = {
 
   newLink: function (req, res, next) {
     var url = req.body.url;
-    console.log(req.body);
+    console.log('d',req.body.url);
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
     }

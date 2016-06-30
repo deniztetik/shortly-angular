@@ -7,7 +7,6 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function(resp){
-      console.log("WE GOT HERE! (getLinks)", resp.data);
       return resp.data
     })
     .catch(function(err){

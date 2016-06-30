@@ -6,7 +6,7 @@ module.exports = {
   signin: function (req, res, next) {
     var username = req.body.username,
         password = req.body.password;
-
+console.log('c',username,password)
     var findUser = Q.nbind(User.findOne, User);
     findUser({username: username})
       .then(function (user) {
@@ -34,7 +34,7 @@ module.exports = {
         password  = req.body.password,
         create,
         newUser;
-
+        console.log('a',username,password)
     var findOne = Q.nbind(User.findOne, User);
 
     // check to see if user already exists
