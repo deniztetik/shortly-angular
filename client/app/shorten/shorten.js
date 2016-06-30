@@ -5,21 +5,15 @@ angular.module('shortly.shorten', [])
   $scope.data = {};
 
   $scope.addLink = function(newUrl){
-    console.log('b',newUrl);
-    if(!newUrl.$valid){
-      newUrl = "Your url is not valid";
-
-    }else{
+    $scope.data = newUrl;
     Links.addLink($scope.data)
       .then(function(data){
           $scope.data[newUrl]  = data;
+          console.log(data);
       })
       .catch(function(err){
           console.error(err);
       })
-    }
     newUrl = "";
-
-
   }
 });

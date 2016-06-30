@@ -76,6 +76,7 @@ console.log('c',username,password)
       findUser({username: user.username})
         .then(function (foundUser) {
           if (foundUser) {
+            console.log('u',user)
             res.status(200).send();
           } else {
             res.status(401).send();
