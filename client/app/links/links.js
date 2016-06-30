@@ -14,6 +14,19 @@ angular.module('shortly.links', [])
            console.error(err);
        })
 
-  };
+  }
   $scope.getLinks();
-});
+})
+.directive('showLink', function(){
+  return{
+    restrict:'EA',
+    templateUrl:'app/links/my_link.html',
+    replace:true,
+    scope:{
+      source:'='
+    },
+    link:function(scope,ele,attr){
+      console.log('here on the directive')
+    }
+  }
+})
